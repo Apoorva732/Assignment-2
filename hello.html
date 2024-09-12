@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST"  style="width:100%">
+        <h1 class="h3" align="center" style="font-weight:bold; color:brown;">User Register Form</h1>
+
+{% csrf_token %}
+<table>
+  <tr><td></td>
+      <td>User N0</td>
+      <td>{{form.sno}}</td>
+  </tr>
+  <tr><td></td>
+      <td>name</td>
+      <td>{{form.sname}}</td>
+  </tr>
+  <tr><td></td>
+      <td>salary</td>
+      <td>{{form.ssalary}}</td>
+  </tr>
+  <tr><td></td>
+      <td>address</td>
+      <td>{{form.saddress}}</td>
+  </tr>
+  
+  
+<tr><td></td>
+      <td></td><br><br>
+<td> <button class="btn btn-block btn-primary text-white py-2 px-5" style="margin-center:20%;"
+                  type="submit">
+              Register
+          </button></td>
+  </tr>
+  <tr>
+      <td>
+          <div class="form-group mt-3">
+          <span  >&nbsp;</span>
+      </div>
+      </td>
+  </tr>
+
+  {% if messages %}
+  {% for message in messages %}
+  <font color='red'> {{ message }}</font>
+  {% endfor %}
+  {% endif %}
+
+</table>
+
+</form>    
+</body>
+</html>
